@@ -10,7 +10,7 @@ export default function NavBar() {
                 <a className={`${styles.link} ${router.pathname === "/" ? styles.active : ""}`}>Home</a>
             </Link>
             <Link href="/about">
-                <a className={`${styles.link} ${router.pathname === "about" ? styles.active : ""}`}>About</a>
+                <a className={`${styles.link} ${router.pathname === "/about" ? styles.active : ""}`}>About</a>
             </Link>
         </nav>
     );
