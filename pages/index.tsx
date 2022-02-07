@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {useRouter} from "next/router";
-import {useEffect, useState} from "react";
 import Seo from "../components/Seo";
 
 export default function Home({results}: MoviesType) {
@@ -50,7 +49,7 @@ export default function Home({results}: MoviesType) {
 };
 
 export async function getServerSideProps() {
-    const {results} = await (
+    const {results}: MoviesType = await (
         await fetch(`http://localhost:3000/api/movies`)
     ).json();
     return {
@@ -62,7 +61,7 @@ export async function getServerSideProps() {
 
 export interface MoviesType {
     page: number,
-    results: MovieType
+    results: MovieType[]
 }
 
 export interface MovieType {
